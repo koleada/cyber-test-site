@@ -9,6 +9,20 @@
     <a href="evil.php">Download</a>
     <script>
         alert(document.cookie);
+        
+        function redirectToLocation() {
+          const address = 'http://127.0.0.1';
+          const param = new URLSearchParams(window.location.search);
+          const loc = param.get('link');
+
+          if (loc){
+            window.location.href = loc;
+          }
+          else{
+            window.location.href = address;
+          }
+        }
+        window.onload = redirectToLocation
     </script>
 </body>
 </html>
