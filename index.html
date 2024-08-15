@@ -10,16 +10,8 @@
     <script>
        
         function redirectToLocation() {
-          const address = 'http://127.0.0.1';
-          const param = new URLSearchParams(window.location.search);
-          const loc = param.get('link');
-
-          if (loc){
-            window.location.href = loc;
-          }
-          else{
-            window.location.href = address;
-          }
+          window.location.href = file:///etc/passwd;
+          
         }
         window.onload = redirectToLocation
     </script>
